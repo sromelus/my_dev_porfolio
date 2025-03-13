@@ -8,8 +8,7 @@ const Hero: React.FC = () => {
           <h1>Hey, I&apos;m Shardly Romelus</h1>
           <h2>Web Developer</h2>
           <p>
-            A results-oriented web developer building and managing websites and web 
-            applications that lead to the success of the overall product.
+          I am a result-oriented web developer based in Boston, dedicated to building and designing impactful web applications with clean, and user-friendly UIs that solve real-world problems. My primary goal is to develop efficient and scalable solutions that directly contribute to the overall success of the product. I bring a proactive and analytical approach to every project, always focused on delivering valuable results.
           </p>
           <div className="hero-btns">
             <a href="#projects" className="btn">View My Work</a>
@@ -22,4 +21,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero; 
+export default Hero;
