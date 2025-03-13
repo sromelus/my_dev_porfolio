@@ -18,6 +18,7 @@ const Footer: React.FC = () => {
               <li><Link href="#home">Home</Link></li>
               <li><Link href="#about">About</Link></li>
               <li><Link href="#projects">Projects</Link></li>
+              <li><Link href="/blogs">Blogs</Link></li>
               <li><Link href="https://linkedin.com/in/shardlyromelus">Contact</Link></li>
             </ul>
           </div>
@@ -30,7 +31,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} Shardly Romelus. All rights reserved.</p>
         </div>
