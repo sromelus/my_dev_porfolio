@@ -44,13 +44,13 @@ const Projects: React.FC = () => {
     <section id="projects" className={styles.projectsSection}>
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>Projects</h2>
-        
+
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
             <div key={project.id} className={styles.projectCard}>
               <div className={styles.projectImageContainer}>
                 {/* Note: Replace with your preferred screenshot API or static images */}
-                <Image 
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
                   width={500}
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
               <div className={styles.projectContent}>
                 <div className={styles.projectHeader}>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
-                  <span className={`${styles.projectType} ${project.type}`}>
+                  <span className={`${styles.projectType} ${styles[project.type]}`}>
                     {project.type === 'personal' ? 'Personal Project' : 'Client Project'}
                   </span>
                 </div>

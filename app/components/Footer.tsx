@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               <li><Link href="#about">About</Link></li>
               <li><Link href="#projects">Projects</Link></li>
               <li><Link href="/blogs">Blogs</Link></li>
-              <li><Link href="https://linkedin.com/in/shardlyromelus">Contact</Link></li>
+              <li><Link href="https://linkedin.com/in/shardlyromelus" target="_blank" rel="noopener noreferrer">Contact</Link></li>
             </ul>
           </div>
           

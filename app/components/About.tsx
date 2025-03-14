@@ -16,7 +16,7 @@ const About: React.FC = () => {
 
             <p>In my last role, at Possip, I&apos;ve been all about making things faster and smarter. I brought in Test-Driven Development, bumping testing coverage from 5% to 24% (a 4x leap!), and hunted down N+1 query issues to drop response times from 4 seconds to 0.2 seconds. I get a kick out of untangling complex messes into clean, maintainable code—especially when I can collab with teammates to level up the whole system.</p>
 
-            <p>My go-to tools? Ruby on Rails, React, Node.js, TypeScript, PostgreSQL, and API integration. I&apos;m always poking around for ways to make codebases leaner and more user-friendly—probably why I spend hours digging into framework guts like Rails&apos; rendering flow. When I&apos;m not coding, I&apos;m hanging with family, chilling on my Xbox, messing around on Duolingo, or reading up on emerging tech. Excited to tackle new challenges with this mix of skills—let&apos;s <Link href="https://www.linkedin.com/in/shardlyromelus/" style={{ color: '#0077cc' }}>chat!</Link></p>
+            <p>My go-to tools? Ruby on Rails, React, Node.js, TypeScript, PostgreSQL, and API integration. I&apos;m always poking around for ways to make codebases leaner and more user-friendly—probably why I spend hours digging into framework guts like Rails&apos; rendering flow. When I&apos;m not coding, I&apos;m hanging with family, chilling on my Xbox, messing around on Duolingo, or reading up on emerging tech. Excited to tackle new challenges with this mix of skills—let&apos;s <Link href="https://www.linkedin.com/in/shardlyromelus/" target="_blank" style={{ color: '#0077cc' }}>chat!</Link></p>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const SocialLinks: React.FC = () => {
         </svg>
       </a>
       <a
-        href="https://github.com/shardlyromelus"
+        href="https://github.com/sromelus"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"

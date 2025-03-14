@@ -50,6 +50,10 @@
   .navLinks li a:hover {
     color: var(--primary-color);
   }
+
+  .activeLink {
+    color: var(--primary-color);
+  }
   
   .menuIcon {
     display: none;

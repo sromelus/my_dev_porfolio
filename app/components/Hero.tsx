@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           </p>
           <div className={styles.heroBtns}>
             <a href="#projects" className={styles.btn}>View My Work</a>
-            <a href="https://www.linkedin.com/in/shardlyromelus" className={styles.btn}>Contact Me</a>
+            <a href="https://www.linkedin.com/in/shardlyromelus" target="_blank" rel="noopener noreferrer" className={styles.btn}>Contact Me</a>
           </div>
           <SocialLinks />
         </div>

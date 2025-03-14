@@ -1,39 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './styles/Blog.module.css';
-type BlogPost = {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  url: string;
-  tags: string[];
-};
+import { getAllBlogPostsSorted } from '../database/blogsQueryHelper';
 
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Optimizing Rails Applications: Solving the N+1 Query Problem",
-    excerpt: "Learn how to identify and fix performance bottlenecks in Rails applications by addressing the common N+1 query issue...",
-    date: "March 15, 2023",
-    readTime: "8 min read",
-    url: "/blog/optimizing-rails-applications",
-    tags: ["Ruby on Rails", "Performance", "Database"]
-  },
-  {
-    id: 2,
-    title: "Building Real-time Applications with WebSockets",
-    excerpt: "Explore the implementation of WebSockets for creating responsive, real-time features in modern web applications...",
-    date: "January 20, 2023",
-    readTime: "10 min read",
-    url: "/blog/real-time-applications-websockets",
-    tags: ["WebSockets", "JavaScript", "Real-time"]
-  },
-  // Add more blog posts as needed
-];
+export default function BlogsPage() {
+  const blogPosts = getAllBlogPostsSorted();
 
-export default function BlogPage() {
   return (
     <div className={styles.blogPage}>
       <div className={styles.container}>
