@@ -7,7 +7,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>About Me</h2>
+        <h2 className={`${styles.sectionTitle} mt-15`}>About Me</h2>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
             <p>I&apos;m <strong>Shardly Romelus</strong>, a full-stack developer who loves building efficient, scalable web applications with clean, and responsive UIs. I started out as a civil engineer, but a few years ago, I transitioned into software development, itching to learn how to build websites. It took grit and a lot of late nights, and honestly, it&apos;s been one of the most rewarding shifts I&apos;ve ever made.</p>

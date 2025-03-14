@@ -1,5 +1,3 @@
-'use client';
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { pdgUsScreenshot, pollNestScreenshot } from '../../images';
@@ -15,13 +13,15 @@ type Project = {
   websiteUrl: string;
   tags: string[];
   type: 'personal' | 'client';
+  slug: string;
 };
 
 // Projects data
-const projects: Project[] = [
+export const projectsData: Project[] = [
   {
     id: 1,
     title: 'Pollnest',
+    slug: 'pollnest',
     description: 'A social live polling platform that lets users vote on trending topics and binary choices with real-time results and chat features.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
@@ -31,22 +31,23 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'PDG Real Estate',
+    slug: 'pdg-real-estate',
     description: 'Website for a Real Estate Developer showcasing their properties, services, and company information.',
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
-    tags: ['Web Development', 'Real Estate', 'Client Project'],
+    tags: ['Web Development', 'Real Estate', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
     type: 'client'
   }
 ];
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className={styles.projectsSection}>
+    <section id="projects" className={`${styles.projectsSection}`}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Projects</h2>
+        <h2 className={`${styles.sectionTitle} mt-15`}>Projects</h2>
 
         <div className={styles.projectsGrid}>
-          {projects.map((project) => (
+          {projectsData.map((project) => (
             <div key={project.id} className={styles.projectCard}>
               <div className={styles.projectImageContainer}>
                 {/* Note: Replace with your preferred screenshot API or static images */}
@@ -83,4 +84,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

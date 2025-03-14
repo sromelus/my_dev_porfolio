@@ -9,24 +9,24 @@ const Header: React.FC = () => {
   const [isWaving, setIsWaving] = useState<boolean>(true);
   const [activeLink, setActiveLink] = useState<string>('/');
   const [hashValue, setHashValue] = useState<string>('');
-  
+
   // Get current path for initial active state
   const pathname = usePathname();
-  
+
   // Set up hash tracking on client side
   useEffect(() => {
     // Set initial hash value
     setHashValue(window.location.hash);
-    
+
     // Update hash value when it changes
     const handleHashChange = () => {
       setHashValue(window.location.hash);
     };
-    
+
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
-  
+
   // Set active link based on current path and hash
   useEffect(() => {
     // Handle root path
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
       } else {
         setActiveLink('/');
       }
-    } 
+    }
     // Handle other routes like /blogs
     else {
       // For paths with deeper segments like /blogs/some-post, just highlight the /blogs
@@ -70,91 +70,32 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={`${styles.container} ${styles.headerContainer}`}>
-        <div className={styles.logo}>
-          <Link href="/">
-            <h2>Hey <span className={`${isWaving ? styles.wave : ''}`}>👋</span>!</h2>
-          </Link>
-        </div>
-
-        <div className={styles.menuIcon} onClick={() => setMenuOpen(!menuOpen)}>
-          <div className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
+      <nav className={`${styles.navbar}`}>
+          <div className={`${styles.container} flex justify-between items-center`}>
+              <div className="text-2xl font-bold">
+                  <Link href="/" className={`${isWaving ? styles.wave : ''} text-3xl`}>👋</Link> Hey!
+              </div>
+              <div className={`${styles.nav} ${menuOpen ? `${styles.open} ${styles.navLinks}` : ''}`}>
+                  <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.activeLink : ''}`}>Home</Link>
+                  <Link href="/#about" className={`${styles.navLink} ${isActive('/#about') ? styles.activeLink : ''}`}>About</Link>
+                  <Link href="/#projects" className={`${styles.navLink} ${isActive('/#projects') ? styles.activeLink : ''}`}>Projects</Link>
+                  <Link href="/blogs" className={`${styles.navLink} ${isActive('/blogs') ? styles.activeLink : ''}`}>Blogs</Link>
+                  <Link href="https://www.linkedin.com/in/shardlyromelus" className={`${styles.navLink} ${isActive('/#contact') ? styles.activeLink : ''}`} target="_blank" rel="noopener noreferrer">Contact</Link>
+              </div>
+              <div className="md:hidden">
+                  <div className={styles.menuIcon} onClick={() => setMenuOpen(!menuOpen)}>
+                    <div className={`${styles.hamburger} ${menuOpen ? styles.active : ''}`}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+              </div>
           </div>
-        </div>
-
-        <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
-          <ul className={styles.navLinks}>
-            <li>
-              <Link 
-                href="/" 
-                className={isActive('/') ? styles.activeLink : ''}
-                onClick={() => {
-                  setMenuOpen(false);
-                  setActiveLink('/');
-                  setHashValue('');
-                }}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/#about" 
-                className={isActive('/#about') ? styles.activeLink : ''}
-                onClick={() => {
-                  setMenuOpen(false);
-                  setActiveLink('/#about');
-                  setHashValue('#about');
-                }}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/#projects" 
-                className={isActive('/#projects') ? styles.activeLink : ''}
-                onClick={() => {
-                  setMenuOpen(false);
-                  setActiveLink('/#projects');
-                  setHashValue('#projects');
-                }}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/blogs" 
-                className={isActive('/blogs') ? styles.activeLink : ''}
-                onClick={() => {
-                  setMenuOpen(false);
-                  setActiveLink('/blogs');
-                  setHashValue('');
-                }}
-              >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="https://www.linkedin.com/in/shardlyromelus" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
+      </nav>
+  )
 };
 
 export default Header;
+
+

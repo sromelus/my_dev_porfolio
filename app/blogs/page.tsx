@@ -9,7 +9,7 @@ export default function BlogsPage() {
   return (
     <div className={styles.blogPage}>
       <div className={styles.container}>
-        <h1 className={styles.pageTitle}>Blog</h1>
+        <h1 className={`${styles.pageTitle} mt-15`}>Blog</h1>
         <div className={styles.blogGrid}>
           {blogPosts.map((post) => (
             <div key={post.id} className={styles.blogCard}>

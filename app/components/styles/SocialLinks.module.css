@@ -1,19 +1,33 @@
-.socialLinks {
+
+.socialIcons {
     display: flex;
+    margin-top: 2rem;
+}
+
+.socialIcon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  .socialLinks a {
-    color: var(--text-color);
-    transition: color 0.3s;
-  }
-  
-  .socialLinks a:hover {
-    color: var(--primary-color);
-  }
-  
-  .socialLinks svg {
-    fill: currentColor;
-  }
-  
+    border-radius: 50%;
+    background-color: rgba(67, 97, 238, 0.1);
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+    background-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.socialIcon:hover svg {
+    fill: white;
+}
+
+.socialIcon svg {
+    fill: var(--primary);
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
