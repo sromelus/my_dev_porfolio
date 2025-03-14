@@ -35,8 +35,8 @@ const Header: React.FC = () => {
         <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
           <ul className={styles.navLinks}>
             <li><Link href="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-            <li><Link href="#about" onClick={() => setMenuOpen(false)}>About</Link></li>
-            <li><Link href="#projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>
+            <li><Link href="/#about" onClick={() => setMenuOpen(false)}>About</Link></li>
+            <li><Link href="/#projects" onClick={() => setMenuOpen(false)}>Projects</Link></li>
             <li><Link href="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link></li>
             <li><Link href="https://www.linkedin.com/in/shardlyromelus" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           </ul>

@@ -1,26 +1,35 @@
+.blogPage {
+  padding: 100px 0 80px;
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 300px);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 20px;
 }
 
-.blogSection {
-  padding: 80px 0;
-  background-color: #f9f9f9;
+.pageTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
 }
 
 .blogGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+  gap: 40px;
+  margin: 40px auto;
+  max-width: 1200px;
 }
 
 .blogCard {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -33,7 +42,7 @@
 }
 
 .blogContent {
-  padding: 25px;
+  padding: 30px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -43,7 +52,7 @@
   display: flex;
   color: #777;
   font-size: 0.85rem;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .blogDate {
@@ -56,8 +65,8 @@
 }
 
 .blogTitle {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
   line-height: 1.4;
 }
 
@@ -75,27 +84,27 @@
   color: #555;
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   flex-grow: 1;
 }
 
 .blogTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 5px;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .blogTag {
   background-color: #f0f0f0;
   color: #666;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
 }
 
 .blogAction {
-  padding: 0 25px 25px;
+  padding: 0 30px 30px;
 }
 
 .readMore {
