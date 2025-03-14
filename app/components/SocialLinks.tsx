@@ -1,6 +1,8 @@
+import styles from './styles/SocialLinks.module.css';
+
 const SocialLinks: React.FC = () => {
   return (
-    <div className="social-links">
+    <div className={styles.socialLinks}>
       <a
         href="https://linkedin.com/in/shardlyromelus"
         target="_blank"

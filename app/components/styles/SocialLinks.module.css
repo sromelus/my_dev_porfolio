@@ -1,0 +1,19 @@
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .socialLinks a {
+    color: var(--text-color);
+    transition: color 0.3s;
+  }
+  
+  .socialLinks a:hover {
+    color: var(--primary-color);
+  }
+  
+  .socialLinks svg {
+    fill: currentColor;
+  }
+  

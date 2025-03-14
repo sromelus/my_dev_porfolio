@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { pdgUsScreenshot, pollNestScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
+import styles from './styles/Projects.module.css';
 
 // Project type definition
 type Project = {
@@ -40,37 +41,37 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="projects-section">
-      <div className="container">
-        <h2 className="section-title">Projects</h2>
+    <section id="projects" className={styles.projectsSection}>
+      <div className={styles.container}>
+        <h2 className={styles.sectionTitle}>Projects</h2>
         
-        <div className="projects-grid">
+        <div className={styles.projectsGrid}>
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="project-image-container">
+            <div key={project.id} className={styles.projectCard}>
+              <div className={styles.projectImageContainer}>
                 {/* Note: Replace with your preferred screenshot API or static images */}
                 <Image 
                   src={project.imageUrl}
                   alt={project.title}
                   width={500}
                   height={300}
-                  className="project-image"
+                  className={styles.projectImage}
                 />
               </div>
-              <div className="project-content">
-                <div className="project-header">
-                  <h3 className="project-title">{project.title}</h3>
-                  <span className={`project-type ${project.type}`}>
+              <div className={styles.projectContent}>
+                <div className={styles.projectHeader}>
+                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <span className={`${styles.projectType} ${project.type}`}>
                     {project.type === 'personal' ? 'Personal Project' : 'Client Project'}
                   </span>
                 </div>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tags">
+                <p className={styles.projectDescription}>{project.description}</p>
+                <div className={styles.projectTags}>
                   {project.tags.map((tag, index) => (
-                    <span key={index} className="project-tag">{tag}</span>
+                    <span key={index} className={styles.projectTag}>{tag}</span>
                   ))}
                 </div>
-                <Link href={project.websiteUrl} className="project-link" target="_blank" rel="noopener noreferrer">
+                <Link href={project.websiteUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
                   Visit Website
                 </Link>
               </div>

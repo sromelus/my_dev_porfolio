@@ -1,0 +1,127 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.blogSection {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.blogCard {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blogContent {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogMeta {
+  display: flex;
+  color: #777;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.blogDate {
+  margin-right: 15px;
+}
+
+.blogReadTime:before {
+  content: '•';
+  margin-right: 15px;
+}
+
+.blogTitle {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.blogTitle a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blogTitle a:hover {
+  color: #555;
+}
+
+.blogExcerpt {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.blogTag {
+  background-color: #f0f0f0;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.blogAction {
+  padding: 0 25px 25px;
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.readMore svg {
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+
+.readMore:hover {
+  color: #555;
+}
+
+.readMore:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+}
