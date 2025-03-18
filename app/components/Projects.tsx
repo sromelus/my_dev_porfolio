@@ -50,7 +50,7 @@ export const projectsData: Project[] = [
     websiteUrl: 'https://cpr-ready.vercel.app/',
     tags: ['Web Development', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
     type: 'client',
-    status: 'completed'
+    status: 'in-development'
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ export const projectsData: Project[] = [
     slug: 'the-weather-today',
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
     imageUrl: theWeatherTodayScreenshot,
-    websiteUrl: 'https://the-weather-today.vercel.app/',
+    websiteUrl: 'https://sromelus.github.io/the-weather-today/#/',
     tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI'],
     type: 'personal',
     status: 'completed'

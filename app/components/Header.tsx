@@ -73,7 +73,9 @@ const Header: React.FC = () => {
       <nav className={`${styles.navbar}`}>
           <div className={`${styles.container} flex justify-between items-center`}>
               <div className="text-2xl font-bold">
-                  <Link href="/" className={`${isWaving ? styles.wave : ''} text-3xl`}>👋</Link> Hey!
+                  <Link href="/">
+                    <span className={`${isWaving ? styles.wave : ''} text-3xl`}>👋</span> Hey!
+                  </Link>
               </div>
               <div className={`${styles.nav} ${menuOpen ? `${styles.open} ${styles.navLinks}` : ''}`}>
                   <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.activeLink : ''}`}>Home</Link>
