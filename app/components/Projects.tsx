@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { pdgUsScreenshot, pollNestScreenshot } from '../../images';
+import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
@@ -14,6 +14,7 @@ type Project = {
   tags: string[];
   type: 'personal' | 'client';
   slug: string;
+  status: 'completed' | 'upcoming' | 'in-development';
 };
 
 // Projects data
@@ -26,7 +27,8 @@ export const projectsData: Project[] = [
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
     tags: ['React', 'Node.js', 'MongoDB', 'Real-time', 'WebSockets'],
-    type: 'personal'
+    type: 'personal',
+    status: 'in-development'
   },
   {
     id: 2,
@@ -36,7 +38,30 @@ export const projectsData: Project[] = [
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
     tags: ['Web Development', 'Real Estate', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
-    type: 'client'
+    type: 'client',
+    status: 'in-development'
+  },
+  {
+    id: 3,
+    title: 'CPR Ready',
+    slug: 'cpr-ready',
+    description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
+    imageUrl: cprReadyScreenshot,
+    websiteUrl: 'https://cpr-ready.vercel.app/',
+    tags: ['Web Development', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
+    type: 'client',
+    status: 'completed'
+  },
+  {
+    id: 4,
+    title: 'The Weather Today',
+    slug: 'the-weather-today',
+    description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
+    imageUrl: theWeatherTodayScreenshot,
+    websiteUrl: 'https://the-weather-today.vercel.app/',
+    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI'],
+    type: 'personal',
+    status: 'completed'
   }
 ];
 
@@ -61,11 +86,18 @@ const Projects: React.FC = () => {
               </div>
               <div className={styles.projectContent}>
                 <div className={styles.projectHeader}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
+                  <h3 className={`${styles.projectTitle} w-5/8`}>{project.title}</h3>
                   <span className={`${styles.projectType} ${styles[project.type]}`}>
                     {project.type === 'personal' ? 'Personal Project' : 'Client Project'}
                   </span>
                 </div>
+
+                <div className='mb-2 text-xs text-gray-500'>
+                  <span className={`${styles.projectStatus} ${styles[project.status]}`}>
+                    status: {project.status}
+                  </span>
+                </div>
+
                 <p className={styles.projectDescription}>{project.description}</p>
                 <div className={styles.projectTags}>
                   {project.tags.map((tag, index) => (

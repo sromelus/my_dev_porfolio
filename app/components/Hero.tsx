@@ -23,9 +23,9 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
               <h1 className={styles.heroTitle}>Hey, I&apos;m <p>Shardly Romelus</p></h1>
-              <h2 className={styles.heroSubtitle}>Web Dev</h2>
+              <h2 className={styles.heroSubtitle}>Web Developer / Software Engineer</h2>
               <p className="text-lg text-gray-600 mb-8">
-              I am a result-oriented web developer based in Boston, dedicated to building and designing impactful web applications with clean, and user-friendly UIs that solve real-world problems. My primary goal is to develop efficient and scalable solutions that directly contribute to the overall success of the product. I bring a proactive and analytical approach to every project, always focused on delivering valuable results.
+              Based in Boston, I am passionate about developing and deploying high-quality web applications with clean, user-friendly UIs. My aim is to build intuitive and high-performing applications that enhance the user experience. I bring a proactive and analytical approach to every project, always focused on delivering valuable results.
               </p>
               <div className="flex flex-wrap gap-4">
                   <Link href="/#projects" className={styles.btnPrimary}>Current Projects...</Link>
