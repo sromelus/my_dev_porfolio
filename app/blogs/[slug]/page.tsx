@@ -2,6 +2,8 @@ import styles from '../styles/BlogPost.module.css';
 import Link from 'next/link';
 import { getBlogPostBySlug } from '../../database/blogsQueryHelper';
 import { notFound } from 'next/navigation';
+import { getPageMetadata, blogMetadata } from '@/app/seo/metadata';
+import { Metadata } from 'next';
 
 type BlogPost = {
   id: number;
@@ -15,9 +17,23 @@ type BlogPost = {
   content: string;
 };
 
-export default async function BlogPage({ params }: { params: { name: string } }) {
-  const { name } = await params;
-  const post = getBlogPostBySlug(name) as BlogPost;
+interface Props {
+  params: { slug: string }
+}
+
+export function generateMetadata({ params }: Props): Metadata {
+  // Verify that the blog slug is valid
+  if (params.slug in blogMetadata) {
+    return getPageMetadata(params.slug as keyof typeof blogMetadata);
+  }
+
+  // Return default metadata if blog not found
+  return getPageMetadata('home');
+}
+
+export default async function BlogPage({ params }: { params: { slug: string } }) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug) as BlogPost;
 
   if (!post) {
     notFound();
