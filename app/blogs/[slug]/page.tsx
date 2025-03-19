@@ -18,21 +18,23 @@ type BlogPost = {
 };
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Verify that the blog slug is valid
-  if (params.slug in blogMetadata) {
-    return getPageMetadata(params.slug as keyof typeof blogMetadata);
+  const slug = (await params).slug;
+  
+  if (slug in blogMetadata) {
+    return getPageMetadata(slug as keyof typeof blogMetadata);
   }
 
   // Return default metadata if blog not found
   return getPageMetadata('home');
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+export default async function BlogPage({ params }: { params: Promise<{ slug: string }> }) {
+  const slug = (await params).slug;
   const post = getBlogPostBySlug(slug) as BlogPost;
 
   if (!post) {
