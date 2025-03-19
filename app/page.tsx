@@ -1,15 +1,20 @@
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import { getPageMetadata } from './seo/metadata';
+import { getPersonSchema, SchemaMarkup } from './seo/jsonld';
 
-const Home: React.FC = () => {
+export const metadata = getPageMetadata('home');
+
+export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Projects />
-      <About />
-    </main>
+    <>
+      <SchemaMarkup schema={getPersonSchema()} />
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+      </main>
+    </>
   );
-};
-
-export default Home;
+}
