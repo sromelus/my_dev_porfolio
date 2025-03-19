@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* <!-- Hero Section --> */}
-      <section className={`${styles.heroSection} container mx-auto px-4 md:px-8`}>
+      <section id="home" className={`${styles.heroSection} container mx-auto px-4 md:px-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
               <h1 className={styles.heroTitle}>Hey, I&apos;m <p>Shardly Romelus</p></h1>

@@ -79,9 +79,9 @@ const Header: React.FC = () => {
               </div>
               <div className={`${styles.nav} ${menuOpen ? `${styles.open} ${styles.navLinks}` : ''}`}>
                   <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.activeLink : ''}`}>Home</Link>
-                  <Link href="/#about" className={`${styles.navLink} ${isActive('/#about') ? styles.activeLink : ''}`}>About</Link>
                   <Link href="/#projects" className={`${styles.navLink} ${isActive('/#projects') ? styles.activeLink : ''}`}>Projects</Link>
                   <Link href="/blogs" className={`${styles.navLink} ${isActive('/blogs') ? styles.activeLink : ''}`}>Blogs</Link>
+                  <Link href="/#about" className={`${styles.navLink} ${isActive('/#about') ? styles.activeLink : ''}`}>About Me</Link>
                   <Link href="https://www.linkedin.com/in/shardlyromelus" className={`${styles.navLink} ${isActive('/#contact') ? styles.activeLink : ''}`} target="_blank" rel="noopener noreferrer">Contact</Link>
               </div>
               <div className="md:hidden">
