@@ -1,13 +1,14 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import styles from './styles/Header.module.css';
 
 const Header: React.FC = () => {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isWaving, setIsWaving] = useState<boolean>(true);
-  const [activeLink, setActiveLink] = useState<string>('/');
+  const [activeLink, setActiveLink] = useState<string>('/#home');
   const [hashValue, setHashValue] = useState<string>('');
 
   // Get current path for initial active state
@@ -61,11 +62,26 @@ const Header: React.FC = () => {
     }
     // For hash links like /#about
     else if (href.includes('#')) {
-      return activeLink === href;
+      return activeLink.replace('#', '') === href.replace('#', '');
     }
     // For regular links like /blogs
     else {
       return href.startsWith(activeLink) && activeLink !== '/';
+    }
+
+  };
+
+  const handleNavClick = async (hash: string) => {
+    if (pathname === '/') {
+      // Just update the hash if already on home page
+      setActiveLink(`/${hash}`);
+      setHashValue(hash);
+      window.location.hash = hash;
+    } else {
+      setActiveLink(`/${hash}`);
+      setHashValue(hash);
+     // Use Next.js router for smooth navigation
+     await router.push(`/#${hash}`);
     }
   };
 
@@ -78,10 +94,10 @@ const Header: React.FC = () => {
                   </Link>
               </div>
               <div className={`${styles.nav} ${menuOpen ? `${styles.open} ${styles.navLinks}` : ''}`}>
-                  <Link href="/" className={`${styles.navLink} ${isActive('/') ? styles.activeLink : ''}`}>Home</Link>
-                  <Link href="/#projects" className={`${styles.navLink} ${isActive('/#projects') ? styles.activeLink : ''}`}>Projects</Link>
+                  <Link href="/#home" className={`${styles.navLink} ${isActive('/#home') ? styles.activeLink : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}>Home</Link>
+                  <Link href="/#projects" className={`${styles.navLink} ${isActive('/#projects') ? styles.activeLink : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('projects'); }}>Projects</Link>
                   <Link href="/blogs" className={`${styles.navLink} ${isActive('/blogs') ? styles.activeLink : ''}`}>Blogs</Link>
-                  <Link href="/#about" className={`${styles.navLink} ${isActive('/#about') ? styles.activeLink : ''}`}>About Me</Link>
+                  <Link href="/#about" className={`${styles.navLink} ${isActive('/#about') ? styles.activeLink : ''}`} onClick={(e) => { e.preventDefault(); handleNavClick('about'); }}>About Me</Link>
                   <Link href="https://www.linkedin.com/in/shardlyromelus" className={`${styles.navLink} ${isActive('/#contact') ? styles.activeLink : ''}`} target="_blank" rel="noopener noreferrer">Contact</Link>
               </div>
               <div className="md:hidden">
