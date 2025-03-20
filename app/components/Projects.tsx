@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot } from '../../images';
+import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, myPortfolioScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
@@ -15,6 +15,7 @@ type Project = {
   type: 'personal' | 'client';
   slug: string;
   status: 'completed' | 'upcoming' | 'in-development';
+  githubUrl: string | null;
 };
 
 // Projects data
@@ -26,7 +27,8 @@ export const projectsData: Project[] = [
     description: 'A social live polling platform that lets users vote on trending topics and binary choices with real-time results and chat features.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
-    tags: ['React', 'Node.js', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
+    githubUrl: null,
+    tags: ['Node.js', 'Express', 'Next.js', 'React', 'Typescript', 'Tailwind CSS', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
     type: 'personal',
     status: 'in-development'
   },
@@ -37,6 +39,7 @@ export const projectsData: Project[] = [
     description: 'Website for a Real Estate Developer showcasing their properties, services, and company information.',
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
+    githubUrl: null,
     tags: ['Web Development', 'Real Estate', 'Next.js', 'React', 'Typescript', 'Sqlite', 'Vercel'],
     type: 'client',
     status: 'in-development'
@@ -48,6 +51,7 @@ export const projectsData: Project[] = [
     description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
     imageUrl: cprReadyScreenshot,
     websiteUrl: 'https://cpr-ready.vercel.app/',
+    githubUrl: null,
     tags: ['Web Development', 'Next.js', 'PostgreSQL', 'React', 'Typescript', 'Vercel'],
     type: 'client',
     status: 'in-development'
@@ -59,7 +63,20 @@ export const projectsData: Project[] = [
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
     imageUrl: theWeatherTodayScreenshot,
     websiteUrl: 'https://sromelus.github.io/the-weather-today/#/',
+    githubUrl: 'https://github.com/sromelus/the-weather-today',
     tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI', 'github pages'],
+    type: 'personal',
+    status: 'completed'
+  },
+  {
+    id: 5,
+    title: 'My Portfolio',
+    slug: 'my-portfolio',
+    description: 'This is my portfolio website. I built it to showcases my projects, skills, experiences, blogs, and more.',
+    imageUrl: myPortfolioScreenshot,
+    websiteUrl: 'https://shardlyromelus.com',
+    githubUrl: 'https://github.com/sromelus/my_dev_porfolio',
+    tags: ['Web Development', 'Next.js', 'Tailwind CSS', 'Typescript', 'Vercel'],
     type: 'personal',
     status: 'completed'
   }
@@ -104,9 +121,16 @@ const Projects: React.FC = () => {
                     <span key={index} className={styles.projectTag}>{tag}</span>
                   ))}
                 </div>
-                <Link href={project.websiteUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                  Visit Website
-                </Link>
+                <div className='flex justify-center gap-2'>
+                  <Link href={project.websiteUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                  </Link>
+                  {project.githubUrl && (
+                    <Link href={project.githubUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}
