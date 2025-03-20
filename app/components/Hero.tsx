@@ -67,6 +67,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
+        <div className='flex justify-center items-center relative bottom-15 animate-bounce'>
+          <div className='text-4xl'>↓</div>
+        </div>
     </>
   );
 };
