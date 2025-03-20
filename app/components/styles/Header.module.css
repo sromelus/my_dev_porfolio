@@ -7,14 +7,16 @@
 .wave {
     display: inline-block;
     animation: wave 1s infinite;
+    transform-origin: bottom center;
   }
-  
+
   @keyframes wave {
     0% { transform: rotate(0deg); }
-    50% { transform: rotate(15deg); }
+    50% { transform: rotate(10deg); }
+    95% { transform: rotate(-10deg); }
     100% { transform: rotate(0deg); }
   }
-  
+
   .header {
     position: fixed;
     width: 100%;
@@ -23,7 +25,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     z-index: 100;
   }
-  
+
   .headerContainer {
     display: flex;
     justify-content: space-between;

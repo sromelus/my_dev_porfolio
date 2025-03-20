@@ -15,11 +15,11 @@
   box-shadow: 0 0 2px 1px var(--primary);
   top: -11%;
   left: 41%;
-  animation: tumble 10s linear forwards;
 }
 
-.tumbleElement {
+.heroImageAnimation {
   animation: tumble 10s linear forwards;
+  animation-delay: 4s;
 }
 
 @keyframes tumble {
@@ -35,8 +35,8 @@
   85% {transform: translate(140px, 10px) rotate(225deg); opacity: 1;}
   90% {transform: translate(180px, 10px) rotate(250deg); opacity: 1;}
   95% {transform: translate(190px, 300px) rotate(275deg); opacity: 1;}
-  96% {transform: translate(200px, 1000px) rotate(300deg); opacity: 1;}
-  100% {transform: translate(200px, 1000px) rotate(300deg); opacity: 0;}
+  96% {transform: translate(200px, 5000px) rotate(300deg); opacity: 1;}
+  100% {transform: translate(200px, 500px) rotate(300deg); opacity: 0;}
 }
 
 .heroTitle {

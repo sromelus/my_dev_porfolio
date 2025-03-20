@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
               <div className="flex flex-col gap-4 relative">
-                <div className={styles.heroImage}>
+                <div className={`${styles.heroImage} ${styles.heroImageAnimation}`}>
                   <Image src={shardlyRomelusPic} alt="Shardly Romelus" className="profile-img" />
                 </div>
                 <div>
