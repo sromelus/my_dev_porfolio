@@ -1,12 +1,17 @@
-'use client';
+// 'use client';
 import React from 'react';
 import Link from 'next/link';
 import styles from './styles/About.module.css';
+import { shardlyRomelusPic } from '../../images';
+import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.container}>
+        <div className={styles.heroImage}>
+          <Image src={shardlyRomelusPic} alt="Shardly Romelus" className="profile-img" />
+        </div>
         <h2 className={`${styles.sectionTitle} mt-15`}>About Me</h2>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>

@@ -15,6 +15,28 @@
   box-shadow: 0 0 2px 1px var(--primary);
   top: -11%;
   left: 41%;
+  animation: tumble 10s linear forwards;
+}
+
+.tumbleElement {
+  animation: tumble 10s linear forwards;
+}
+
+@keyframes tumble {
+  0% {transform: translate(0px, 0px) rotate(0deg); opacity: 1;}
+  10% {transform: translate(15px, 10px) rotate(25deg); opacity: 1;}
+  20% {transform: translate(30px, 10px) rotate(50deg); opacity: 1;}
+  30% {transform: translate(45px, 10px) rotate(75deg); opacity: 1;}
+  40% {transform: translate(60px, 10px) rotate(100deg); opacity: 1;}
+  50% {transform: translate(75px, 10px) rotate(125deg); opacity: 1;}
+  60% {transform: translate(90px, 10px) rotate(150deg); opacity: 1;}
+  70% {transform: translate(105px, 10px) rotate(175deg); opacity: 1;}
+  80% {transform: translate(120px, 10px) rotate(200deg); opacity: 1;}
+  85% {transform: translate(140px, 10px) rotate(225deg); opacity: 1;}
+  90% {transform: translate(180px, 10px) rotate(250deg); opacity: 1;}
+  95% {transform: translate(190px, 300px) rotate(275deg); opacity: 1;}
+  96% {transform: translate(200px, 1000px) rotate(300deg); opacity: 1;}
+  100% {transform: translate(200px, 1000px) rotate(300deg); opacity: 0;}
 }
 
 .heroTitle {

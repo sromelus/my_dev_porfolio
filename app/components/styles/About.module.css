@@ -3,7 +3,24 @@
     margin: 0 auto;
     padding: 0 20px;
   }
-  
+
+  .heroImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 2px 1px var(--primary);
+    margin: 0 auto;
+    animation: rocking 5s linear infinite;
+  }
+
+  @keyframes rocking {
+    0% {transform: translate(0px, 0px) rotate(0deg);}
+    10% {transform: translate(0px, 0px) rotate(5deg);}
+    20% {transform: translate(0px, 0px) rotate(-5deg);}
+  }
+
   .sectionTitle {
     text-align: center;
     margin-bottom: 40px;
