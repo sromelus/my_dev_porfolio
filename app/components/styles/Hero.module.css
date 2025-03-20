@@ -5,6 +5,18 @@
     margin-top: -80px;
 }
 
+.heroImage {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  position: absolute;
+  box-shadow: 0 0 2px 1px var(--primary);
+  top: -11%;
+  left: 41%;
+}
+
 .heroTitle {
     font-size: 3.5rem;
     font-weight: 700;
@@ -175,5 +187,12 @@
 
   .blob {
     display: none;
+  }
+
+  .heroImage {
+    width: 100px;
+    height: 100px;
+    top: 5%;
+    left: 65%;
   }
 }

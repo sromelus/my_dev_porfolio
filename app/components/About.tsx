@@ -10,13 +10,13 @@ const About: React.FC = () => {
         <h2 className={`${styles.sectionTitle} mt-15`}>About Me</h2>
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
-            <p>I&apos;m <strong>Shardly Romelus</strong>, a full-stack developer who loves building efficient, scalable web applications with clean, and responsive UIs. I started out as a civil engineer, but a few years ago, I transitioned into software development, itching to learn how to build websites. It took grit and a lot of late nights, and honestly, it&apos;s been one of the most rewarding shifts I&apos;ve ever made.</p>
+            <p>I&apos;m <strong>Shardly Romelus</strong>, a full-stack developer who loves building efficient, scalable web applications with clean and responsive UIs. A few years back, I transitioned from civil engineering to software development, itching to learn coding and build my own projects/websites. It has been one of the most rewarding leaps I have ever taken, fueled by grit and plenty of late-night coding sessions.</p>
 
-            <p>When I first jumped into tech, I landed at Attention Exchange, a startup building user engagement tools. There, I tackled migrating the backend from PHP to a Node.js Express API server. I also built a React-based campaign creation platform that slashed setup time by 30%, making life easier for the team and clients.</p>
+            <p>My first fulltime gig was at Attention Exchange, a startup crafting user engagement tools. There, I led a backend overhaul, swapping PHP for a Node.js Express API server, and built a React-based campaign creation platform that cut setup time by 30% a huge time-saver for the team and clients.</p>
 
-            <p>In my last role, at Possip, I&apos;ve been most focused on improving system efficiency. I advocated for Test-Driven Development those efforts helped bump testing coverage from 5% to 24% (a 4x leap!), and hunted down N+1 query issues to drop response times from 4 seconds to 0.2 seconds. I get a kick out of untangling complex messes into clean, maintainable code—especially when I can collab with teammates to level up the whole system.</p>
+            <p>In my last gig at Possip, I zeroed in on system efficiency, pushing Test-Driven Development to boost testing coverage from 5% to 25% (aiming for 80%—we were getting there!) and tackling N+1 query issues to slash response latency times from 4 seconds to 0.2 seconds. I thrive on turning tangled code into clean, especially when I can team up with peers to improve and maintain the codebase. My go-to tools? Ruby on Rails, React, Node.js, JavaScript, TypeScript, and PostgreSQL.</p>
 
-            <p>I&apos;m always poking around for ways to make codebases leaner and more user friendly! When I&apos;m not coding, I&apos;m hanging with family, playing my Xbox, practicing my spanish on Duolingo, or reading up on emerging tech, and more. Excited to tackle new challenges with this mix of skills—let&apos;s <Link href="https://www.linkedin.com/in/shardlyromelus/" target="_blank" style={{ color: '#0077cc' }}>chat!</Link></p>
+            <p>When I am not coding, you will find me hanging with family, brushing up on Spanish with Duolingo, diving into the latest tech trends, or playing my Xbox. I am pumped to bring this energy to new projects—got a challenge I can tackle for you? <Link href="https://www.linkedin.com/in/shardlyromelus/" target="_blank" style={{ color: '#0077cc' }}>Let&apos;s chat!</Link></p>
           </div>
         </div>
       </div>

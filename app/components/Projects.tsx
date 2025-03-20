@@ -26,7 +26,7 @@ export const projectsData: Project[] = [
     description: 'A social live polling platform that lets users vote on trending topics and binary choices with real-time results and chat features.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
-    tags: ['React', 'Node.js', 'MongoDB', 'Real-time', 'WebSockets'],
+    tags: ['React', 'Node.js', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
     type: 'personal',
     status: 'in-development'
   },
@@ -37,7 +37,7 @@ export const projectsData: Project[] = [
     description: 'Website for a Real Estate Developer showcasing their properties, services, and company information.',
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
-    tags: ['Web Development', 'Real Estate', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
+    tags: ['Web Development', 'Real Estate', 'Next.js', 'React', 'Typescript', 'Sqlite', 'Vercel'],
     type: 'client',
     status: 'in-development'
   },
@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
     imageUrl: cprReadyScreenshot,
     websiteUrl: 'https://cpr-ready.vercel.app/',
-    tags: ['Web Development', 'Next.js', 'Sqlite', 'Tailwind CSS', 'Typescript'],
+    tags: ['Web Development', 'Next.js', 'PostgreSQL', 'React', 'Typescript', 'Vercel'],
     type: 'client',
     status: 'in-development'
   },
@@ -59,7 +59,7 @@ export const projectsData: Project[] = [
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
     imageUrl: theWeatherTodayScreenshot,
     websiteUrl: 'https://sromelus.github.io/the-weather-today/#/',
-    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI'],
+    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI', 'github pages'],
     type: 'personal',
     status: 'completed'
   }

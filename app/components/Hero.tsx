@@ -1,10 +1,12 @@
 import SocialLinks from './SocialLinks';
 import styles from './styles/Hero.module.css';
 import { projectsData } from './Projects';
+import Image from 'next/image';
 import Link from 'next/link';
+import { shardlyRomelusPic } from '../../images';
 
 const Hero: React.FC = () => {
-  const skills = ['Ruby', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', '(Testing)']
+  const skills = ['Ruby', 'JavaScript', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', '(and more)']
   const featuredProject = projectsData.find(project => project.slug === 'pdg-real-estate');
   return (
     <>
@@ -22,8 +24,15 @@ const Hero: React.FC = () => {
       <section id="home" className={`${styles.heroSection} container mx-auto px-4 md:px-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-              <h1 className={styles.heroTitle}>Hey, I&apos;m <p>Shardly Romelus</p></h1>
-              <h2 className={styles.heroSubtitle}>Web Developer / Software Engineer</h2>
+              <div className="flex flex-col gap-4 relative">
+                <div className={styles.heroImage}>
+                  <Image src={shardlyRomelusPic} alt="Shardly Romelus" className="profile-img" />
+                </div>
+                <div>
+                  <h1 className={styles.heroTitle}>Hey, I&apos;m <p>Shardly Romelus</p></h1>
+                  <h2 className={styles.heroSubtitle}>Web Developer / Software Engineer</h2>
+                </div>
+              </div>
               <p className="text-lg text-gray-600 mb-8">
               Based in Boston, I am passionate about developing and deploying high-quality web applications with clean, user-friendly UIs. My aim is to build intuitive and high-performing applications that enhance the user experience. I bring a proactive and analytical approach to every project, always focused on delivering valuable results.
               </p>
