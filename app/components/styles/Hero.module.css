@@ -19,7 +19,7 @@
 
 .heroImageAnimation {
   animation: tumble 10s linear forwards;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
 
 @keyframes tumble {
