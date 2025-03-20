@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, myPortfolioScreenshot } from '../../images';
+import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, myPortfolioScreenshot, shoppingCartRepoScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
@@ -10,11 +10,11 @@ type Project = {
   title: string;
   description: string;
   imageUrl: StaticImageData;
-  websiteUrl: string;
+  websiteUrl: string | null;
   tags: string[];
   type: 'personal' | 'client';
   slug: string;
-  status: 'completed' | 'upcoming' | 'in-development';
+  status: 'completed' | 'upcoming' | 'in-development' | 'archived';
   githubUrl: string | null;
 };
 
@@ -24,7 +24,7 @@ export const projectsData: Project[] = [
     id: 1,
     title: 'Pollnest',
     slug: 'pollnest',
-    description: 'A social live polling platform that lets users vote on trending topics and binary choices with real-time results and chat features.',
+    description: 'This is my latest project that I have been working on. Planning on making it into a SaaS product. It is a social live polling platform that lets users vote on trending topics and binary choices with real-time results and live chat, and more.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
     githubUrl: null,
@@ -34,6 +34,18 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
+    title: 'Shopping Cart System',
+    slug: 'shopping-cart-system',
+    description: 'I have been building this online shopping cart system as a side project. It is a simple shopping cart system that allows users to add and remove items to their cart apply promotions and checkout.',
+    imageUrl: shoppingCartRepoScreenshot,
+    websiteUrl: null,
+    githubUrl: 'https://github.com/sromelus/shopping-cart-with-promotions-app',
+    tags: ['Ruby', 'Rails', 'Rails Views ERB', 'Vanilla CSS', 'Sqlite3'],
+    type: 'personal',
+    status: 'archived'
+  },
+  {
+    id: 3,
     title: 'PDG Real Estate',
     slug: 'pdg-real-estate',
     description: 'Website for a Real Estate Developer showcasing their properties, services, and company information.',
@@ -45,7 +57,7 @@ export const projectsData: Project[] = [
     status: 'in-development'
   },
   {
-    id: 3,
+    id: 4,
     title: 'CPR Ready',
     slug: 'cpr-ready',
     description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
@@ -57,7 +69,7 @@ export const projectsData: Project[] = [
     status: 'in-development'
   },
   {
-    id: 4,
+    id: 5,
     title: 'The Weather Today',
     slug: 'the-weather-today',
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
@@ -69,7 +81,7 @@ export const projectsData: Project[] = [
     status: 'completed'
   },
   {
-    id: 5,
+    id: 6,
     title: 'My Portfolio',
     slug: 'my-portfolio',
     description: 'This is my portfolio website. I built it to showcases my projects, skills, experiences, blogs, and more.',
@@ -122,9 +134,11 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
                 <div className='flex justify-center gap-2'>
-                  <Link href={project.websiteUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
-                    Visit Website
-                  </Link>
+                  {project.websiteUrl && (
+                    <Link href={project.websiteUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+                      Visit Website
+                    </Link>
+                  )}
                   {project.githubUrl && (
                     <Link href={project.githubUrl} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
                       GitHub

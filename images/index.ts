@@ -4,5 +4,6 @@ import cprReadyScreenshot from './cpr-ready-screenshot.png';
 import theWeatherTodayScreenshot from './the-weather-today-screenshot.png';
 import shardlyRomelusPic from './shardly-romelus-pic.jpg';
 import myPortfolioScreenshot from './shardly_porfolio_home_page.png';
+import shoppingCartRepoScreenshot from './shopping-cart-repo-screenshot.png';
 
-export { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shardlyRomelusPic, myPortfolioScreenshot };
+export { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shardlyRomelusPic, myPortfolioScreenshot, shoppingCartRepoScreenshot };
