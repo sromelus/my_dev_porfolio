@@ -217,6 +217,10 @@
     display: none;
   }
 
+  .heroImageAnimation {
+    animation: none;
+  }
+
   .heroImage {
     width: 100px;
     height: 100px;
