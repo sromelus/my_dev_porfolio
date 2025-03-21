@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* <!-- Hero Section --> */}
-      <section id="home" className={`${styles.heroSection} container mx-auto px-4 md:px-8`}>
+      <section id="home" className={`${styles.heroSection} ${styles.container} mx-auto px-4 md:px-8`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
               <div className="flex flex-col gap-4 relative">
@@ -67,9 +67,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </section>
-        <div className='flex justify-center items-center relative bottom-15 animate-bounce'>
-          <div className='text-4xl'>↓</div>
-        </div>
+      <div className='hidden md:flex justify-center items-center relative'>
+        <div className='text-4xl absolute bottom-20 animate-bounce'>↓</div>
+      </div>
     </>
   );
 };
