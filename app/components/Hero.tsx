@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
               Based in Boston, I am passionate about developing and deploying high-quality web applications with clean, user-friendly UIs. My aim is to build intuitive and high-performing applications that enhance the user experience. I bring a proactive and analytical approach to every project, always focused on delivering valuable results.
               </p>
               <div className="flex flex-wrap gap-4">
-                  <Link href="/#projects" className={styles.btnPrimary}>Current Projects...</Link>
+                  <Link href="/#projects" className={styles.btnPrimary}>Current Projects</Link>
                   <Link href="https://www.linkedin.com/in/shardlyromelus/" target="_blank" className={styles.btnSecondary}>Contact Me</Link>
               </div>
               <SocialLinks />
