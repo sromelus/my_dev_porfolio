@@ -24,7 +24,7 @@ export const projectsData: Project[] = [
     id: 1,
     title: 'PDG Real Estate',
     slug: 'pdg-real-estate',
-    description: 'Website for a Real Estate Developer showcasing their properties, services, and company information.',
+    description: 'Website for a Real Estate Developer based in Fort Myers, FL showcasing their properties, services, and company information.',
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
     githubUrl: null,
