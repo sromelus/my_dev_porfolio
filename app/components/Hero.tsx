@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
 
       {/* <!-- Hero Section --> */}
       <section id="home" className={`${styles.heroSection} ${styles.container} mx-auto px-4 md:px-8`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" style={{ marginTop: '-200px' }}>
           <div>
               <div className="flex flex-col gap-4 relative">
                 <div className={`${styles.heroImage} ${styles.heroImageAnimation}`}>
