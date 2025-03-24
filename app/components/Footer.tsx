@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
             <h3>Shardly Romelus</h3>
-            <p>Full Stack Developer specializing in scalable web applications and responsive user interfaces.</p>
+            <p>Full Stack Developer specializing in building robust web applications and intuitive user interfaces.</p>
           </div>
           
           <div className={styles.footerSection}>
