@@ -28,7 +28,7 @@ export const projectsData: Project[] = [
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
     githubUrl: null,
-    tags: ['Web Development', 'Real Estate', 'Next.js', 'React', 'Typescript', 'Sqlite', 'Vercel'],
+    tags: ['Web Development', 'Real Estate', 'Next.js', 'React', 'Typescript', 'Vercel'],
     type: 'client',
     status: 'in-development'
   },
@@ -64,7 +64,7 @@ export const projectsData: Project[] = [
     imageUrl: shoppingCartRepoScreenshot,
     websiteUrl: null,
     githubUrl: 'https://github.com/sromelus/shopping-cart-with-promotions-app',
-    tags: ['Ruby', 'Rails', 'Rails Views ERB', 'Vanilla CSS', 'Sqlite3'],
+    tags: ['Ruby', 'Rails', 'Rails Views ERB', 'Vanilla CSS'],
     type: 'personal',
     status: 'archived'
   },
