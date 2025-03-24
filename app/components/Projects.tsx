@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: 'Pollnest',
     slug: 'pollnest',
-    description: 'This is my latest project that I have been working on. Planning on making it into a SaaS product. It is a social live polling platform that lets users vote on trending topics with real-time results, live chat, and more.',
+    description: 'This is my latest project that I have been working on. Planning on making it into a SaaS product. It is a social live polling platform that lets users vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
     githubUrl: 'https://github.com/sromelus/pollnest-backend',
