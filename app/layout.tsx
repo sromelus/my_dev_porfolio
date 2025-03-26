@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { baseMetadata } from './seo/metadata';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +16,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Shardly Romelus | Portfolio',
-  description: 'Personal portfolio of Shardly Romelus, web developer',
-}
+  ...baseMetadata,
+  openGraph: {
+    ...baseMetadata.openGraph,
+    images: [
+      {
+        url: '/shardly_porfolio_home_page.png',
+        width: 1200,
+        height: 630,
+        alt: 'Shardly Romelus | Portfolio',
+      },
+    ],
+  }
+};
 
 export default function RootLayout({
   children,
@@ -26,6 +37,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta property="og:image" content="http://localhost:3000/shardly_porfolio_home_page.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Shardly Romelus | Portfolio" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
