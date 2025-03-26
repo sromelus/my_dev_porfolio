@@ -11,6 +11,7 @@ export const siteConfig = {
   name: 'Shardly Romelus',
   title: 'Shardly Romelus | Portfolio',
   description: DESCRIPTION,
+  keywords: KEYWORDS,
   url: BASE_URL,
   ogImage: '/shardly_porfolio_home_page.png',
   ogImageWidth: 1200,
@@ -52,7 +53,7 @@ export const baseMetadata: Metadata = {
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
-  keywords: KEYWORDS,
+  keywords: siteConfig.keywords,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   openGraph: {

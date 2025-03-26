@@ -23,7 +23,7 @@ export const getPersonSchema = (): PersonSchema => ({
   sameAs: Object.values(siteConfig.links)
 });
 
-interface ArticleSchema {
+interface BlogSchema {
   '@context': string;
   '@type': string;
   headline: string;
@@ -43,26 +43,27 @@ interface ArticleSchema {
   };
 }
 
-export const getArticleSchema = (post: {
+export const getBlogSchema = (post: {
   title: string;
   date: string;
   description: string;
-}): ArticleSchema => ({
+  slug: string;
+}): BlogSchema => ({
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'Blog',
   headline: post.title,
   datePublished: new Date(post.date).toISOString(),
   dateModified: new Date(post.date).toISOString(),
   author: {
     '@type': 'Person',
     name: siteConfig.name,
-    url: siteConfig.url
+    url: `${siteConfig.url}/blogs`
   },
   description: post.description,
   publisher: {
     '@type': 'Organization',
-    name: siteConfig.name,
-    url: siteConfig.url
+    name: 'Pollnest',
+    url: `${siteConfig.url}/blogs`
   }
 });
 
@@ -86,5 +87,5 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url
   },
-  keywords: ['web developer', 'software engineer', 'full-stack developer', 'React', 'Next.js', 'portfolio', 'shardly romelus', 'shardly romelus portfolio', 'shardly romelus linkedin', 'shardly romelus github', 'shardly'],
+  keywords: siteConfig.keywords
 };

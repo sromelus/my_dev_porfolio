@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getBlogPostBySlug } from '../../database/blogsQueryHelper';
 import { notFound } from 'next/navigation';
 import { getPageMetadata, blogMetadata } from '@/app/seo/metadata';
+import { getBlogSchema, SchemaMarkup } from '@/app/seo/jsonld';
 import { Metadata } from 'next';
 
 type BlogPost = {
@@ -42,38 +43,41 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className={styles.blogPostPage}>
-      <div className={styles.container}>
-        <article className={styles.blogPost}>
-          {/* Article Header */}
-          <header className={styles.blogHeader}>
-            <div className={styles.blogMeta}>
-              <span className={styles.blogDate}>{post.date}</span>
-              <span className={styles.blogReadTime}>{post.readTime}</span>
+    <>
+      <SchemaMarkup schema={getBlogSchema({ title: post.title, date: post.date, description: post.excerpt, slug: post.slug })} />
+      <div className={styles.blogPostPage}>
+        <div className={styles.container}>
+          <article className={styles.blogPost}>
+            {/* Article Header */}
+            <header className={styles.blogHeader}>
+              <div className={styles.blogMeta}>
+                <span className={styles.blogDate}>{post.date}</span>
+                <span className={styles.blogReadTime}>{post.readTime}</span>
+              </div>
+              <h1 className={styles.blogTitle}>{post.title}</h1>
+              <div className={styles.blogTags}>
+                {post.tags.map((tag, index) => (
+                  <span key={index} className={styles.blogTag}>{tag}</span>
+                ))}
+              </div>
+            </header>
+
+            {/* Article Content */}
+            <div 
+              className={styles.blogContent}
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+
+
+            {/* Back to Blogs Link */}
+            <div className={styles.backLink}>
+              <Link href="/blogs">
+                ← Back to all blogs
+              </Link>
             </div>
-            <h1 className={styles.blogTitle}>{post.title}</h1>
-            <div className={styles.blogTags}>
-              {post.tags.map((tag, index) => (
-                <span key={index} className={styles.blogTag}>{tag}</span>
-              ))}
-            </div>
-          </header>
-
-          {/* Article Content */}
-          <div 
-            className={styles.blogContent}
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-
-
-          {/* Back to Blogs Link */}
-          <div className={styles.backLink}>
-            <Link href="/blogs">
-              ← Back to all blogs
-            </Link>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

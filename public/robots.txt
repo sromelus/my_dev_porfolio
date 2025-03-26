@@ -1,5 +1,10 @@
+# *
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://www.shardlyromelus.com/
+# Host
+Host: https://shardlyromelus.com
+
+# Sitemaps
+Sitemap: https://shardlyromelus.com/sitemap.xml
+Sitemap: https://shardlyromelus.com/server-sitemap.xml
