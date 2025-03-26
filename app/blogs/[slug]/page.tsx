@@ -24,7 +24,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // Verify that the blog slug is valid
   const slug = (await params).slug;
-  
+
   if (slug in blogMetadata) {
     return getPageMetadata(slug as keyof typeof blogMetadata);
   }

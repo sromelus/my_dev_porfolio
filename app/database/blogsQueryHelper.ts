@@ -9,6 +9,7 @@ interface BlogPost {
   date: string;
   readTime: string;
   tags: string[];
+  keywords: string[];
   content: string;
 }
 

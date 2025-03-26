@@ -1,40 +1,58 @@
 import { Metadata } from 'next';
+import { getAllBlogPostsSorted } from '../database/blogsQueryHelper';
+import { BASE_URL, DESCRIPTION, KEYWORDS, TWITTER_URL, GITHUB_URL, LINKEDIN_URL } from '../constant/constants';
+
+// Helper to build full URLs for images based on environment
+export const getFullImageUrl = (path: string): string => {
+  return `${BASE_URL}${path}`;
+};
 
 export const siteConfig = {
   name: 'Shardly Romelus',
   title: 'Shardly Romelus | Portfolio',
-  description: 'Full-stack web developer specializing in modern web technologies. Showcasing my latest projects and skills, and blog posts.',
-  url: 'https://your-domain.com', // Replace with your actual domain
+  description: DESCRIPTION,
+  url: BASE_URL,
   ogImage: '/shardly_porfolio_home_page.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   links: {
-    twitter: 'https://twitter.com/your-twitter',
-    github: 'https://github.com/your-github',
-    linkedin: 'https://linkedin.com/in/your-linkedin'
+    twitter: TWITTER_URL,
+    github: GITHUB_URL,
+    linkedin: LINKEDIN_URL
   }
 } as const;
 
-// Blog post metadata configurations
-export const blogMetadata = {
-  'optimizing-rails-applications': {
-    title: 'Optimizing Rails Applications | Performance Tips and Best Practices',
-    description: 'Learn how to optimize your Ruby on Rails applications for better performance. Discover tips, techniques, and best practices for Rails optimization.',
-    keywords: ['N+1', 'N+1 queries', 'N plus one', 'N plus one queries', 'N+1 queries', 'N+1 query', 'N+1 query optimization', 'N+1 query optimization', 'N+1 problem', 'N+1 problem solution', 'Rails optimization', 'Ruby on Rails performance', 'Rails best practices', 'Rails caching', 'Rails N+1 queries', 'Rails performance tips', 'optimize Rails app'],
-  },
-  'understanding-rails-view-rendering': {
-    title: 'Understanding Rails View Rendering | A Comprehensive Guide',
-    description: 'Deep dive into Ruby on Rails view rendering process. Learn about partials, layouts, helpers, and best practices for Rails views.',
-    keywords: ['Rails views', 'Rails view rendering', 'Rails templates', 'Rails partials', 'Rails layouts', 'Rails view helpers', 'ERB templates', 'view rendering'],
-  }
-};
+// Get all blog posts from the database
+const blogPosts = getAllBlogPostsSorted();
+
+// Define the blog metadata type
+interface BlogMetadataItem {
+  title: string;
+  description: string;
+  keywords: string[];
+}
+
+// Dynamically generate blog metadata from blog posts data
+export const blogMetadata = blogPosts.reduce((metadata: Record<string, BlogMetadataItem>, post) => {
+  metadata[post.slug] = {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.keywords,
+  };
+  return metadata;
+}, {});
 
 export const baseMetadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://shardlyromelus.com'
+  ),
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
-  keywords: ['web developer', 'software engineer', 'full-stack developer', 'React', 'Next.js', 'portfolio', 'shardly romelus', 'shardly romelus portfolio', 'shardly romelus linkedin', 'shardly romelus github', 'shardly'],
+  keywords: KEYWORDS,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   openGraph: {
@@ -44,21 +62,28 @@ export const baseMetadata: Metadata = {
     siteName: siteConfig.title,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.title,
-      },
-    ],
+    images: [{
+      url: siteConfig.ogImage,
+      width: siteConfig.ogImageWidth,
+      height: siteConfig.ogImageHeight,
+      alt: siteConfig.title,
+    }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shardly Romelus | Web Developer Portfolio',
-    description: 'Personal portfolio of Shardly Romelus, showcasing web development projects, skills, and professional experience in software engineering.',
-    images: [siteConfig.ogImage], // Same image as OpenGraph
-    creator: '@sromelus', // Replace with your Twitter handle
+    title: siteConfig.title,
+    description: siteConfig.description,
+    site: '@shardlyromelus',
+    creator: '@shardlyromelus',
+    images: [{
+      url: siteConfig.ogImage,
+      width: siteConfig.ogImageWidth,
+      height: siteConfig.ogImageHeight,
+      alt: siteConfig.title,
+    }],
+  },
+  alternates: {
+    canonical: '/',
   },
   robots: {
     index: true,
@@ -76,50 +101,50 @@ export const baseMetadata: Metadata = {
   },
 };
 
+// Now generate the blog post metadata for each blog using both
+// the base metadata and the blog-specific metadata
+const blogPostMetadata = blogPosts.reduce((obj: Record<string, Metadata>, post) => {
+  obj[post.slug] = {
+    title: post.title,
+    description: post.excerpt,
+    keywords: post.keywords,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      url: `${BASE_URL}${post.url}`,
+      images: [{
+        url: siteConfig.ogImage, // Use default OG image
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
+        alt: post.title,
+      }],
+    },
+    twitter: {
+      title: post.title,
+      description: post.excerpt,
+      card: 'summary_large_image',
+      images: [siteConfig.ogImage],
+    }
+  }
+  return obj
+}, {});
+
 export const getPageMetadata = (page: 'home' | keyof typeof blogMetadata): Metadata => {
   const pageMetadata: Record<string, Metadata> = {
     home: {
-      title: 'Home',
-      description: 'Welcome to my portfolio showcasing my latest projects and skills, and blog posts.',
+      title: siteConfig.title,
+      description: siteConfig.description,
       openGraph: {
-        title: 'Home | Shardly Romelus Portfolio',
-        description: 'Welcome to my portfolio showcasing my latest projects and skills, and blog posts.',
+        title: siteConfig.title,
+        description: siteConfig.description,
       },
       twitter: {
-        title: 'Home | Shardly Romelus Portfolio',
-        description: 'Welcome to my portfolio showcasing my latest projects and skills, and blog posts.',
+        title: siteConfig.title,
+        description: siteConfig.description,
       },
     },
-    'optimizing-rails-applications': {
-      title: blogMetadata['optimizing-rails-applications'].title,
-      description: blogMetadata['optimizing-rails-applications'].description,
-      keywords: blogMetadata['optimizing-rails-applications'].keywords,
-      openGraph: {
-        title: blogMetadata['optimizing-rails-applications'].title,
-        description: blogMetadata['optimizing-rails-applications'].description,
-        type: 'article',
-      },
-      twitter: {
-        title: blogMetadata['optimizing-rails-applications'].title,
-        description: blogMetadata['optimizing-rails-applications'].description,
-        card: 'summary_large_image',
-      },
-    },
-    'understanding-rails-view-rendering': {
-      title: blogMetadata['understanding-rails-view-rendering'].title,
-      description: blogMetadata['understanding-rails-view-rendering'].description,
-      keywords: blogMetadata['understanding-rails-view-rendering'].keywords,
-      openGraph: {
-        title: blogMetadata['understanding-rails-view-rendering'].title,
-        description: blogMetadata['understanding-rails-view-rendering'].description,
-        type: 'article',
-      },
-      twitter: {
-        title: blogMetadata['understanding-rails-view-rendering'].title,
-        description: blogMetadata['understanding-rails-view-rendering'].description,
-        card: 'summary_large_image',
-      },
-    },
+    ...blogPostMetadata
   };
 
   return {

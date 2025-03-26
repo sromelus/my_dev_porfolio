@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPostsSorted } from './database/blogsQueryHelper';
+import { BASE_URL } from './constant/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://your-domain.com'; // Replace with your actual domain
+  const baseUrl = BASE_URL;
 
   // Add all your static routes
   const routes = [
