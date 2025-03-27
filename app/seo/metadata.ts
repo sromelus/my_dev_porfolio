@@ -98,7 +98,6 @@ export const baseMetadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
   },
 };
 
