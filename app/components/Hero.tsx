@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { shardlyRomelusPic } from '../../images';
 
 const Hero: React.FC = () => {
-  const skills = ['Ruby', 'JavaScript', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', '(and more)']
+  const skills = ['Ruby', 'JavaScript', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'SQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', 'Api Integration', 'Docker', '(and more)']
+
   const featuredProject = projectsData.find(project => project.slug === 'pdg-real-estate');
   return (
     <>
