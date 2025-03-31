@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: 'Pollnest',
     slug: 'pollnest',
-    description: 'This is my latest project that I have been working on. Planning on making it into a SaaS product. It is a social live polling platform that lets users vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
+    description: 'This is my latest project that I have been working on. It is a social live voting game that allows users to vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
     imageUrl: pollNestScreenshot,
     websiteUrl: 'https://pollnest.com',
     githubUrl: 'https://github.com/sromelus/pollnest-backend',
@@ -64,7 +64,7 @@ export const projectsData: Project[] = [
     imageUrl: shoppingCartRepoScreenshot,
     websiteUrl: null,
     githubUrl: 'https://github.com/sromelus/shopping-cart-with-promotions-app',
-    tags: ['Ruby', 'Rails', 'Rails Views ERB', 'Vanilla CSS'],
+    tags: ['Rails', 'Rspec', 'Github Actions'],
     type: 'personal',
     status: 'archived'
   },
@@ -76,7 +76,7 @@ export const projectsData: Project[] = [
     imageUrl: theWeatherTodayScreenshot,
     websiteUrl: 'https://sromelus.github.io/the-weather-today/#/',
     githubUrl: 'https://github.com/sromelus/the-weather-today',
-    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI', 'github pages'],
+    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI integration'],
     type: 'personal',
     status: 'completed'
   }
