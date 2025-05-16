@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shoppingCartRepoScreenshot } from '../../images';
+import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shoppingCartRepoScreenshot, dailyPulseScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
@@ -14,7 +14,7 @@ type Project = {
   tags: string[];
   type: 'personal' | 'client';
   slug: string;
-  status: 'completed' | 'upcoming' | 'in-development' | 'archived';
+  status: 'production' | 'upcoming' | 'in-development' | 'archived';
   githubUrl: string | null;
 };
 
@@ -30,7 +30,7 @@ export const projectsData: Project[] = [
     githubUrl: null,
     tags: ['Web Development', 'Real Estate', 'Next.js', 'React', 'Typescript', 'Vercel'],
     type: 'client',
-    status: 'in-development'
+    status: 'production'
   },
   {
     id: 2,
@@ -46,6 +46,18 @@ export const projectsData: Project[] = [
   },
   {
     id: 3,
+    title: 'Daily Pulse',
+    slug: 'daily-pulse',
+    description: 'Daily Pulse is my blog where I write about interesting things I have learned while doom scrolling on the internet. The articles content are a mix of my own thoughts, what I have learned from the internet, and are AI assisted.',
+    imageUrl: dailyPulseScreenshot,
+    websiteUrl: 'https://www.currentpulsedaily.com/',
+    githubUrl: null, //'https://github.com/sromelus/daily-pulse-blog',
+    tags: ['Nextjs', 'React', 'Tailwind CSS', 'Turso'],
+    type: 'personal',
+    status: 'production'
+  },
+  {
+    id: 4,
     title: 'Pollnest',
     slug: 'pollnest',
     description: 'This is my latest project that I have been working on. It is a social live voting game that allows users to vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
@@ -57,7 +69,7 @@ export const projectsData: Project[] = [
     status: 'in-development'
   },
   {
-    id: 4,
+    id: 5,
     title: 'Shopping Cart System',
     slug: 'shopping-cart-system',
     description: 'I have been building this online shopping cart system as a side project. It is a simple shopping cart system that allows users to add and remove items to their cart apply promotions and checkout.',
@@ -69,16 +81,16 @@ export const projectsData: Project[] = [
     status: 'archived'
   },
   {
-    id: 5,
+    id: 6,
     title: 'The Weather Today',
     slug: 'the-weather-today',
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
     imageUrl: theWeatherTodayScreenshot,
     websiteUrl: 'https://sromelus.github.io/the-weather-today/#/',
     githubUrl: 'https://github.com/sromelus/the-weather-today',
-    tags: ['Web Development', 'React', 'vanilla CSS', 'weatherAPI integration'],
+    tags: ['React', 'vanilla CSS', 'weatherAPI integration'],
     type: 'personal',
-    status: 'completed'
+    status: 'production'
   }
 ];
 
