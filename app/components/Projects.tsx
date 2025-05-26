@@ -48,7 +48,7 @@ export const projectsData: Project[] = [
     id: 3,
     title: 'Daily Pulse',
     slug: 'daily-pulse',
-    description: 'Daily Pulse is my blog where I write about interesting things I have learned while doom scrolling on the internet. The articles content are a mix of my own thoughts, what I have learned from the internet, and are AI assisted.',
+    description: 'Daily Pulse is my blog where I write about interesting things I have learned while doom scrolling on the internet. The articles content are a mix of my own thoughts, what I have learned from the internet, and input from AI tools.',
     imageUrl: dailyPulseScreenshot,
     websiteUrl: 'https://www.currentpulsedaily.com/',
     githubUrl: null, //'https://github.com/sromelus/daily-pulse-blog',
@@ -76,7 +76,7 @@ export const projectsData: Project[] = [
     imageUrl: shoppingCartRepoScreenshot,
     websiteUrl: null,
     githubUrl: 'https://github.com/sromelus/shopping-cart-with-promotions-app',
-    tags: ['Rails', 'Rspec', 'Github Actions'],
+    tags: ['Ruby', 'Rails', 'Rspec', 'Github Actions'],
     type: 'personal',
     status: 'archived'
   },
