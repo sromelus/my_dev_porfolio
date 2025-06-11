@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { pdgUsScreenshot, pollNestScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shoppingCartRepoScreenshot, dailyPulseScreenshot } from '../../images';
+import { pdgUsScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shoppingCartRepoScreenshot, dailyPulseScreenshot } from '../../images';
+// import { pollNestScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
