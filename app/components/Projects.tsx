@@ -56,18 +56,18 @@ export const projectsData: Project[] = [
     type: 'personal',
     status: 'production'
   },
-  {
-    id: 4,
-    title: 'Pollnest',
-    slug: 'pollnest',
-    description: 'This is my latest project that I have been working on. It is a social live voting game that allows users to vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
-    imageUrl: pollNestScreenshot,
-    websiteUrl: 'https://pollnest.com',
-    githubUrl: 'https://github.com/sromelus/pollnest-backend',
-    tags: ['Node.js', 'Express', 'Next.js', 'React', 'Typescript', 'Tailwind CSS', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
-    type: 'personal',
-    status: 'in-development'
-  },
+  // {
+  //   id: 4,
+  //   title: 'Pollnest',
+  //   slug: 'pollnest',
+  //   description: 'This is one of my latest projects that I have been working on. It is a social live voting game that allows users to vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
+  //   imageUrl: pollNestScreenshot,
+  //   websiteUrl: 'https://pollnest.com',
+  //   githubUrl: 'https://github.com/sromelus/pollnest-backend',
+  //   tags: ['Node.js', 'Express', 'Next.js', 'React', 'Typescript', 'Tailwind CSS', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
+  //   type: 'personal',
+  //   status: 'in-development'
+  // },
   {
     id: 5,
     title: 'Shopping Cart System',
