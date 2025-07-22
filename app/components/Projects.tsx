@@ -39,11 +39,11 @@ export const projectsData: Project[] = [
     slug: 'cpr-ready',
     description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
     imageUrl: cprReadyScreenshot,
-    websiteUrl: 'https://cpr-ready.vercel.app/',
+    websiteUrl: 'https://www.cprsouthwestfl.com',
     githubUrl: null,
     tags: ['Web Development', 'Next.js', 'PostgreSQL', 'React', 'Typescript', 'Vercel'],
     type: 'client',
-    status: 'in-development'
+    status: 'production'
   },
   {
     id: 3,
