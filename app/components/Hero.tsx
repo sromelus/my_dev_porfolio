@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                 </div>
                 <div>
                   <h1 className={styles.heroTitle}>Hey, I&apos;m <p>Shardly Romelus</p></h1>
-                  <h2 className={styles.heroSubtitle}>Web Developer / Software Engineer</h2>
+                  <h2 className={styles.heroSubtitle}>Full Stack Developer</h2>
                 </div>
               </div>
               <p className="text-lg text-gray-600 mb-8">
