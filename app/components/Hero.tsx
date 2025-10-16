@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { shardlyRomelusPic } from '../../images';
 
 const Hero: React.FC = () => {
-  const skills = ['OOP', 'Ruby', 'JavaScript', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'SQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', 'Api Integration', 'Docker']
+  const skills = ['Ruby', 'JavaScript', 'TypeScript', 'Ruby on Rails', 'Node.js', 'React', 'Next.js', 'PostgreSQL', 'MongoDB']
+  // const skills = ['OOP', 'Ruby', 'JavaScript', 'Rails', 'Node.js', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'SQL', 'Sidekiq', 'AWS', 'GCP', 'Rspec', 'Jest', 'Api Integration', 'Docker']
 
   const featuredProject = projectsData.find(project => project.slug === 'pdg-real-estate');
   return (
@@ -48,7 +49,7 @@ const Hero: React.FC = () => {
                   <div className="bg-blue-50 absolute -top-10 -right-10 w-40 h-40 rounded-full"></div>
                   <div className="bg-indigo-50 absolute -bottom-10 -left-10 w-32 h-32 rounded-full"></div>
                   <div className="relative z-10">
-                      <h3 className="text-xl font-bold mb-4">Tools I&apos;m most familiar with</h3>
+                      <h3 className="text-xl font-bold mb-4">Core Tech Stack:</h3>
                       <div className="mb-6">
                           {skills.map((skill, index) => (
                               <span key={index} className={styles.skillTag}>{skill}</span>

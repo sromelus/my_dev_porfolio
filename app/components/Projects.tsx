@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { pdgUsScreenshot, cprReadyScreenshot, theWeatherTodayScreenshot, shoppingCartRepoScreenshot, dailyPulseScreenshot } from '../../images';
-// import { pollNestScreenshot } from '../../images';
+import { pollNestScreenshot } from '../../images';
 import { StaticImageData } from 'next/image';
 import styles from './styles/Projects.module.css';
 
@@ -21,11 +21,23 @@ type Project = {
 
 // Projects data
 export const projectsData: Project[] = [
-  {
+    {
     id: 1,
+    title: 'Pollnest',
+    slug: 'pollnest',
+    description: 'pollnest.com is a real-time social polling platform that allows users to participate in trending polls with real-time voting, chat, and win rewards.',
+    imageUrl: pollNestScreenshot,
+    websiteUrl: 'https://pollnest.com',
+    githubUrl: null, //'https://github.com/sromelus/pollnest-backend',
+    tags: ['Node.js', 'Express', 'Next.js', 'React', 'Typescript', 'Tailwind CSS', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
+    type: 'personal',
+    status: 'production'
+  },
+  {
+    id: 2,
     title: 'PDG Real Estate',
     slug: 'pdg-real-estate',
-    description: 'Website for a Real Estate Developer based in Fort Myers, FL showcasing their properties, services, and company information.',
+    description: 'Website for a Real Estate Developer based in Fort Myers, FL showcasing their properties, services, and company information. I recently handed over the project to the client. They need to update the site with new content and images.',
     imageUrl: pdgUsScreenshot,
     websiteUrl: 'https://pdgus.com',
     githubUrl: null,
@@ -34,7 +46,7 @@ export const projectsData: Project[] = [
     status: 'production'
   },
   {
-    id: 2,
+    id: 3,
     title: 'CPR Ready',
     slug: 'cpr-ready',
     description: 'CPR Ready is a CPR training agency, based in Naples, FL, that offers courses and certifications for CPR, First Aid, and AED.',
@@ -46,10 +58,10 @@ export const projectsData: Project[] = [
     status: 'production'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Daily Pulse',
     slug: 'daily-pulse',
-    description: 'Daily Pulse is my blog where I write about interesting things I have learned while doom scrolling on the internet. The articles content are a mix of my own thoughts, what I have learned from the internet, and input from AI tools.',
+    description: 'Daily Pulse is my blog where I write about interesting things I have learned while doom scrolling on the internet. The articles content are a mix of my own thoughts, what I have learned.',
     imageUrl: dailyPulseScreenshot,
     websiteUrl: 'https://www.currentpulsedaily.com/',
     githubUrl: null, //'https://github.com/sromelus/daily-pulse-blog',
@@ -57,20 +69,8 @@ export const projectsData: Project[] = [
     type: 'personal',
     status: 'production'
   },
-  // {
-  //   id: 4,
-  //   title: 'Pollnest',
-  //   slug: 'pollnest',
-  //   description: 'This is one of my latest projects that I have been working on. It is a social live voting game that allows users to vote on trending topics with real-time results, live chat, and more. I am currently working on the frontend, feel free to check out the backend repo on GitHub.',
-  //   imageUrl: pollNestScreenshot,
-  //   websiteUrl: 'https://pollnest.com',
-  //   githubUrl: 'https://github.com/sromelus/pollnest-backend',
-  //   tags: ['Node.js', 'Express', 'Next.js', 'React', 'Typescript', 'Tailwind CSS', 'MongoDB', 'Real-time', 'WebSockets', 'GCP'],
-  //   type: 'personal',
-  //   status: 'in-development'
-  // },
   {
-    id: 5,
+    id: 6,
     title: 'Shopping Cart System',
     slug: 'shopping-cart-system',
     description: 'I have been building this online shopping cart system as a side project. It is a simple shopping cart system that allows users to add and remove items to their cart apply promotions and checkout.',
@@ -82,7 +82,7 @@ export const projectsData: Project[] = [
     status: 'archived'
   },
   {
-    id: 6,
+    id: 7,
     title: 'The Weather Today',
     slug: 'the-weather-today',
     description: 'The Weather Today is a weather app that allows users to search for weather information for a specific location.',
